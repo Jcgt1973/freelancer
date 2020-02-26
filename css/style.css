@@ -1,4 +1,6 @@
 :root {
+    --primario: #ffc107;
+    --secundario: #0097a7;
     --ocuro: #212121;
 }
 
@@ -7,7 +9,10 @@ html {
     min-height: 100%;
     font-size: 62.5%;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -18,9 +23,16 @@ body {
     font-size: 1.6rem;
 }
 
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
 .site-header {
     background-color: #ffffff;
 }
+
 .site-header nav {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,13 +41,14 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 @media (min-width: 768px) {
     .site-header nav {
         flex-direction: row;
         justify-content: space-between;
-
     }
 }
+
 .site-header nav a {
     color: var(--oscuro);
     font-size: 2.2rem;
@@ -50,6 +63,50 @@ body {
 @media (min-width: 768px) {
     .site-header nav a {
         margin-bottom: 0;
-
     }
+}
+
+.hero {
+    height: 45rem;
+    background-image: url(../img/hero.jpg);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero::after {
+    content: '';
+    background-color: rgba(0, 0, 0, .7);
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.contenedor-hero {
+    color: white;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.contenedor-hero i {
+    font-size: 5rem;
+    color: var(--primario);
+}
+
+.boton {
+    background-color: var(--secundario);
+    padding: 1rem 5rem;
+    display: inline-block;
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.2rem;
+    border-radius: .5rem;
 }
